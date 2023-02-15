@@ -64,6 +64,6 @@
 ---
 
 <div align="center">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vctrtvfrrr&layout=compact&langs_count=8&hide=html,css" alt="Top Langs" width="350" align="left" />
-<img src="http://github-readme-streak-stats.herokuapp.com?user=vctrtvfrrr" alt="GitHub Streak" width="455" align="left" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vctrtvfrrr&layout=compact&langs_count=8&hide=html,css" alt="Top Langs" />
+<img src="http://github-readme-streak-stats.herokuapp.com?user=vctrtvfrrr" alt="GitHub Streak" />
 </div>
