@@ -1,7 +1,7 @@
-<script setup>
+<script setup lang="ts">
 defineProps({
   navigationTree: {
-    type: Array,
+    type: Array<{ _path: string; title: string; children: array }>,
     default: () => [],
   },
 });

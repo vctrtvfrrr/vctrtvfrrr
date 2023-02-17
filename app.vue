@@ -12,7 +12,7 @@ const { data: navigation } = await useAsyncData("navigation", () => {
       </nav>
     </header>
 
-    <main class="prose">
+    <main>
       <NuxtPage />
     </main>
   </div>
