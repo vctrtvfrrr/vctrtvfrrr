@@ -1,3 +1,5 @@
 <template>
-  <ContentDoc />
+  <article class="prose">
+    <ContentDoc />
+  </article>
 </template>
