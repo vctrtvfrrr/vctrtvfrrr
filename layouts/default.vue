@@ -1,73 +1,17 @@
-<script setup lang="ts">
-const props = defineProps<{
-  doc: any;
-  docs: any;
-  currentPage: number;
-  total: number;
-  tag: string;
-}>();
-
-const isTocEnabled =
-  props.doc?.body?.toc?.links.length &&
-  props.doc?.body.toc?.links.length > 0 &&
-  props.doc?.table_of_contents;
-</script>
-
 <template>
   <AppHeader />
 
-  <main>
-    <div v-if="doc">
-      <div
-        v-if="doc.cover"
-        class="md:flex justify-center mt-24 hidden lg:h-[500px]"
-      >
-        <NuxtImg
-          :src="'/images/' + doc.cover"
-          :alt="doc.title"
-          fit="cover"
-          placeholder
-        />
-      </div>
-
-      <div class="px-4 mx-auto sm:px-6 xl:max-w-7xl xl:px-0 mt-10">
-        <ArticleHeader :article="doc" />
-
-        <div class="text-left mx-auto">
-          <div class="flex flex-wrap lg:flex-row-reverse py-12">
-            <div v-if="isTocEnabled" class="w-full lg:w-1/4 px-5">
-              <PageSidebar :toc="doc.body.toc.links" />
-            </div>
-
-            <div
-              class="w-full px-5 max-w-none centered-image"
-              :class="isTocEnabled ? 'lg:w-3/4 ' : ''"
-            >
-              <ContentRenderer
-                id="nuxtContent"
-                :value="doc"
-                class="prose text-sm md:text-xl min-w-full md:p-10 mx-auto"
-              />
-            </div>
-          </div>
+  <main class="mt-14">
+    <div class="mx-auto max-w-[1330px] md:p-4">
+      <div class="grid grid-cols-3 md:gap-4">
+        <div class="col-span-3 lg:col-span-2 md:p-4">
+          <slot />
         </div>
-
-        <div class="flex items-center justify-center mb-6">
-          <NuxtLink
-            v-for="tag in doc.tags"
-            :key="tag"
-            :to="`/tags/${tag}`"
-            class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mx-2"
-          >
-            {{ tag }}
-          </NuxtLink>
+        <div
+          class="col-span-1 p-4 hidden lg:block border-l border-gray-200 sticky top-28 h-screen overflow-y-auto"
+        >
+          <SideAuthorCard />
         </div>
-
-        <hr class="mb-8" />
-
-        <ShareSection :title="doc.title" :cover="doc.cover" />
-
-        <!-- <CommentSystem :id="doc.id" :nocomments="doc.nocomments" /> -->
       </div>
     </div>
   </main>

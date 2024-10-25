@@ -28,6 +28,8 @@ useHead({
 
 <template>
   <div class="flex flex-col min-h-screen">
-    <NuxtPage />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>
