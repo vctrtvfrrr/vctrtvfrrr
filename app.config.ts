@@ -1,48 +1,38 @@
 export default defineAppConfig({
-  name: "Victor Otávio Ferreira",
+  name: "Victor Ferreira",
   description:
     "This is a blog made with Bloggrify. It is a simple and minimalist blog template. You can customize it as you want or use another template from Bloggrify. Enjoy !",
   url: "https://www.victorotavio.com.br",
   pagination: {
     per_page: 5,
   },
-  authors: [
-    {
-      default: true,
-      username: "vctrtvfrrr",
-      name: "Victor Otávio Ferreira",
-      description:
-        "lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
-      avatar: "/images/logo.png",
-      socials: {
-        github: "https://github.com/vctrtvfrrr",
-        linkedin: "https://linkedin.com/in/victorotavio",
-        twitter: "https://twitter.com/vctrtvfrrr",
-        twitter_username: "vctrtvfrrr",
-        youtube: "https://www.youtube.com/@VictorOtavio",
-      },
+  author: {
+    name: "Victor Ferreira",
+    description:
+      "Líder Técnico | Arquiteto de Software | Mentor | Especialista em Desenvolvimento Web",
+    avatar: "/images/logo.png",
+    socials: {
+      github: "https://github.com/vctrtvfrrr",
+      linkedin: "https://linkedin.com/in/victorotavio",
+      twitter: "https://twitter.com/vctrtvfrrr",
+      twitter_username: "vctrtvfrrr",
+      youtube: "https://www.youtube.com/@VictorOtavio",
     },
-  ],
+  },
   menu: [
     { name: "Home", path: "/" },
     { name: "Blog", path: "/blog" },
     { name: "Arquivo", path: "/archives" },
   ],
-  socials: {
-    github: "https://github.com/vctrtvfrrr",
-    linkedin: "https://linkedin.com/in/victorotavio",
-    twitter: "https://twitter.com/vctrtvfrrr",
-    youtube: "https://www.youtube.com/@VictorOtavio",
-    // see https://github.com/stefanobartoletti/nuxt-social-share
-    sharing_networks: [
-      "facebook",
-      "twitter",
-      "linkedin",
-      "reddit",
-      "whatsapp",
-      "telegram",
-    ],
-  },
+  // see https://github.com/stefanobartoletti/nuxt-social-share
+  sharing_networks: [
+    "facebook",
+    "twitter",
+    "linkedin",
+    "reddit",
+    "whatsapp",
+    "telegram",
+  ],
   newsletter: {
     enabled: true,
     form_action: "YOUR_NEWSLETTER_FORM_ACTION",

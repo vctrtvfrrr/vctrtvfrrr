@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const config = useAppConfig();
 const route = useRoute();
-const sharingNetworks = config.socials?.sharing_networks || [];
+const sharingNetworks = config.sharing_networks || [];
 
 defineProps<{
   title: string;

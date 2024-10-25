@@ -3,7 +3,7 @@ const props = defineProps<{
   article: any;
 }>();
 
-const author = findAuthor(props.article.author);
+const { author } = useAppConfig();
 </script>
 
 <template>
@@ -51,6 +51,7 @@ const author = findAuthor(props.article.author);
           {{ article.readingTime.text }}
         </p>
       </div>
+
       <div
         v-if="author"
         class="flex items-center font-medium sm:mx-3 justify-center"

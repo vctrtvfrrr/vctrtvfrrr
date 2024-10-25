@@ -85,50 +85,12 @@ async function subscribe() {
         <div class="flex flex-col items-start mt-6">
           <div class="flex mb-3 space-x-4">
             <NuxtLink
-              v-if="config.socials.youtube"
-              aria-label="Open Youtube profile"
-              class="text-sm text-gray-500 transition hover:text-gray-600"
-              target="_blank"
-              rel="me"
-              :to="config.socials.youtube"
-            >
-              <span class="sr-only">Youtube</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-                class="transition-transform hover:scale-110 w-6 h-6"
-              >
-                <path
-                  d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"
-                />
-              </svg>
-            </NuxtLink>
-            <NuxtLink
-              v-if="config.socials.mastodon"
-              aria-label="Open Mastodon profile"
-              class="text-sm text-gray-500 transition hover:text-gray-600"
-              target="_blank"
-              rel="me"
-              :to="config.socials.mastodon"
-            >
-              <span class="sr-only">Mastodon</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512"
-                class="transition-transform hover:scale-110 w-6 h-6"
-              >
-                <path
-                  d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54a102.5 102.5 0 0 1 -.9-13.9c85.6 20.9 158.7 9.1 178.8 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.3V197c0-58.5-64-56.6-64-6.9v114.2H90.2c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175z"
-                />
-              </svg>
-            </NuxtLink>
-            <NuxtLink
-              v-if="config.socials.github"
+              v-if="config.author.socials.github"
               aria-label="Open github profile"
               class="text-sm text-gray-500 transition hover:text-gray-600"
               target="_blank"
               rel="nofollow noopener noreferrer"
-              :to="config.socials.github"
+              :to="config.author.socials.github"
             >
               <span class="sr-only">github</span>
               <svg
@@ -142,31 +104,12 @@ async function subscribe() {
               </svg>
             </NuxtLink>
             <NuxtLink
-              v-if="config.socials.facebook"
-              aria-label="Open Facebook profile"
-              class="text-sm text-gray-500 transition hover:text-gray-600"
-              target="_blank"
-              rel="noopener noreferrer"
-              :to="config.socials.facebook"
-            >
-              <span class="sr-only">Facebook</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="transition-transform hover:scale-110 w-6 h-6"
-                viewBox="0 0 320 512"
-              >
-                <path
-                  d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"
-                />
-              </svg>
-            </NuxtLink>
-            <NuxtLink
-              v-if="config.socials.linkedin"
+              v-if="config.author.socials.linkedin"
               aria-label="Open linkedin profile"
               class="text-sm text-gray-500 transition hover:text-gray-600"
               target="_blank"
               rel="noopener noreferrer"
-              :to="config.socials.linkedin"
+              :to="config.author.socials.linkedin"
             >
               <span class="sr-only">Linkedin</span>
               <svg
@@ -180,11 +123,11 @@ async function subscribe() {
               </svg>
             </NuxtLink>
             <NuxtLink
-              v-if="config.socials.twitter"
+              v-if="config.author.socials.twitter"
               aria-label="Open twitter profile"
               target="_blank"
               rel="nofollow noopener noreferrer"
-              :to="config.socials.twitter"
+              :to="config.author.socials.twitter"
               class="text-gray-500 transition hover:text-gray-600"
             >
               <svg
@@ -194,6 +137,25 @@ async function subscribe() {
               >
                 <path
                   d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm297.1 84L257.3 234.6 379.4 396H283.8L209 298.1 123.3 396H75.8l111-126.9L69.7 116h98l67.7 89.5L313.6 116h47.5zM323.3 367.6L153.4 142.9H125.1L296.9 367.6h26.3z"
+                />
+              </svg>
+            </NuxtLink>
+            <NuxtLink
+              v-if="config.author.socials.youtube"
+              aria-label="Open Youtube profile"
+              class="text-sm text-gray-500 transition hover:text-gray-600"
+              target="_blank"
+              rel="me"
+              :to="config.author.socials.youtube"
+            >
+              <span class="sr-only">Youtube</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 576 512"
+                class="transition-transform hover:scale-110 w-6 h-6"
+              >
+                <path
+                  d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"
                 />
               </svg>
             </NuxtLink>
