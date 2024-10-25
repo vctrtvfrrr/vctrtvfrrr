@@ -11,8 +11,7 @@ export default defineNuxtConfig({
   ],
   content: {
     markdown: {
-      remarkPlugins: ["remark-reading-time"],
-      // rehypePlugins: [],
+      remarkPlugins: ["remark-reading-time", "remark-mermaidjs"],
     },
     highlight: {
       langs: [

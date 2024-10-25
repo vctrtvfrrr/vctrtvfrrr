@@ -24,6 +24,8 @@
     "focus-trap": "^7.6.0",
     "fuse.js": "^7.0.0",
     "nuxt": "^3.13.2",
+    "playwright": "^1.48.1",
+    "remark-mermaidjs": "^7.0.0",
     "remark-reading-time": "^2.0.1",
     "sitemap": "^8.0.0",
     "vue": "latest",
