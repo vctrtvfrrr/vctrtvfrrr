@@ -4,7 +4,6 @@ defineProps<{
   docs: any;
   currentPage: number;
   total: number;
-  category: string;
   tag: string;
 }>();
 
@@ -22,7 +21,7 @@ function desc(article: any): string {
   <main class="mt-14">
     <div class="mx-auto max-w-[1330px] md:p-4">
       <div class="">
-        <h1 class="p-4 text-4xl font-bold">Tag : {{ tag }}</h1>
+        <h1 class="p-4 text-4xl font-bold">Tag: {{ tag }}</h1>
 
         <div class="space-y-8">
           <div

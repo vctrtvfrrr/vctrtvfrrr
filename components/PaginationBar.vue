@@ -3,7 +3,6 @@ const config = useAppConfig();
 const itemsPerPage = config.pagination.per_page;
 
 const props = defineProps<{
-  category?: string;
   tag?: string;
   currentPage: number;
   total: number;
@@ -13,9 +12,7 @@ const goToPage = (page: number) => {
   if (page < 1 || page > Math.ceil(props.total / itemsPerPage)) {
     return;
   }
-  const path = props.category
-    ? `/categories/${props.category}/page/${page}`
-    : props.tag
+  const path = props.tag
     ? `/tags/${props.tag}/page/${page}`
     : `/archives/page/${page}`;
   navigateTo(path);

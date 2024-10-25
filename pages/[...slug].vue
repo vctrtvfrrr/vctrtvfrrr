@@ -3,9 +3,7 @@ const route = useRoute();
 const config = useAppConfig();
 const slug = route.params.slug as string[];
 
-// detect if we are on a special page like:
-// /tags/something/page/2
-// /archives/page/1
+// detect if we are on a special page
 const isTag = slug[0] === "tags";
 const isArchives = slug[0] === "archives";
 
@@ -14,51 +12,9 @@ let docs = null;
 let page = 1;
 let totalNumberOfPages = 1;
 let theme = "default";
-let category = "";
 let tag = "";
 const numberOfPostsPerPage = config.pagination?.per_page || 10;
 
-// if (isCategory) {
-//   category = slug[1];
-
-//   const title = "Category: " + category;
-//   const description = title;
-
-//   useHead({
-//     title: "Archives",
-//     meta: [
-//       { name: "description", content: description },
-//       { name: "og:title", content: title },
-//       { name: "og:description", content: description },
-//       { name: "twitter:title", content: title },
-//       { name: "twitter:description", content: description },
-//     ],
-//   });
-
-//   page = Number.parseInt(slug[3]) || 1;
-
-//   const where = {
-//     categories: { $in: category },
-//     hidden: { $ne: true },
-//     listed: { $ne: false },
-//   };
-
-//   const result = await useAsyncData(route.path, async () => {
-//     let queryBuilder = queryContent("").where(where).sort({ date: -1 });
-
-//     if (numberOfPostsPerPage != -1) {
-//       queryBuilder = queryBuilder
-//         .limit(numberOfPostsPerPage)
-//         .skip((page - 1) * numberOfPostsPerPage);
-//     }
-
-//     return await queryBuilder.find();
-//   });
-
-//   totalNumberOfPages = await queryContent("").where(where).count();
-//   docs = result.data;
-//   theme = "category";
-// } else
 if (isArchives) {
   const title = "Archives";
   const description = "Archives";
@@ -260,7 +216,6 @@ if (isArchives) {
     :docs="docs"
     :current-page="page"
     :total="totalNumberOfPages"
-    :category="category"
     :tag="tag"
   />
 </template>

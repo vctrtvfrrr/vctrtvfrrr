@@ -4,7 +4,6 @@ const props = defineProps<{
   docs: any;
   currentPage: number;
   total: number;
-  category: string;
   tag: string;
 }>();
 
