@@ -1,3 +1,18 @@
+<script setup lang="ts">
+const config = useAppConfig();
+
+useHead({
+  title: config.name,
+  meta: [
+    { name: "description", content: config.description },
+    { name: "og:title", content: config.name },
+    { name: "og:description", content: config.description },
+    { name: "twitter:title", content: config.name },
+    { name: "twitter:description", content: config.description },
+  ],
+});
+</script>
+
 <template>
   <div>
     <div align="center">
