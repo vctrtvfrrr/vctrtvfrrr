@@ -88,7 +88,7 @@ function desc(article: any): string {
 
           <div class="flex items-center justify-center mt-10">
             <NuxtLink
-              to="/archives"
+              to="/blog/archives"
               class="mt-2 bg-black hover:bg-slate-800 text-white font-semibold py-2 px-4 rounded"
             >
               View all posts
