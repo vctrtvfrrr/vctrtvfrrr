@@ -8,13 +8,18 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "pnpm build && node dist/index.js",
     "dev:tsc": "tsc --watch --preserveWatchOutput",
     "dev:node": "node --enable-source-maps --watch dist/index.js",
     "dev": "pnpm run \"/dev:/\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1"
+  },
   "devDependencies": {
+    "@types/express": "^5.0.0",
     "@types/node": "^22.8.4",
     "typescript": "^5.6.3"
   }
