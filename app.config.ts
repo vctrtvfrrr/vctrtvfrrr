@@ -22,7 +22,7 @@ export default defineAppConfig({
   menu: [
     { name: "Home", path: "/" },
     { name: "Blog", path: "/blog" },
-    { name: "Arquivo", path: "/blog/archives" },
+    { name: "Arquivo", path: "/archives" },
   ],
   // see https://github.com/stefanobartoletti/nuxt-social-share
   sharing_networks: [

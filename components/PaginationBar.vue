@@ -13,8 +13,8 @@ const goToPage = (page: number) => {
     return;
   }
   const path = props.tag
-    ? `/blog/tags/${props.tag}/page/${page}`
-    : `/blog/archives/page/${page}`;
+    ? `/tags/${props.tag}/page/${page}`
+    : `/archives/page/${page}`;
   navigateTo(path);
 };
 </script>

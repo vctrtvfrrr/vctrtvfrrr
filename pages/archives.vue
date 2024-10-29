@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { format } from "date-fns";
 import type { ParsedContent, QueryBuilderParams } from "@nuxt/content";
 
 const query: QueryBuilderParams = {
@@ -8,8 +9,7 @@ const query: QueryBuilderParams = {
 };
 
 function getYear(date: string) {
-  if (!date) return new Date().getFullYear();
-  return new Date(date).getFullYear();
+  return format(date, "yyyy");
 }
 
 function shouldDisplayYear(list: ParsedContent[], date: string, index: number) {
@@ -24,7 +24,7 @@ function shouldDisplayYear(list: ParsedContent[], date: string, index: number) {
     <div class="mx-auto max-w-[1330px] md:p-4">
       <ContentList :query="query">
         <template #not-found>
-          <p>No posts found.</p>
+          <p>Nenhum post encontrado.</p>
         </template>
 
         <template #default="{ list }">
@@ -43,10 +43,10 @@ function shouldDisplayYear(list: ParsedContent[], date: string, index: number) {
             </div>
 
             <NuxtLink
-              :to="article._path"
+              :to="`/blog${article._path}`"
               class="text-gray-700 underline decoration-dashed underline-offset-4"
             >
-              <span>{{ article.date }}</span> &middot;
+              <span>{{ format(article.date, 'yyyy-MM-dd') }}</span> &middot;
               <span>{{ article.title }}</span>
             </NuxtLink>
 
