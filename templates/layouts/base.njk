@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    {% include 'partials/meta.njk' %}
+  </head>
+  <body>
+    {% include 'partials/header.njk' %}
+
+    <main>
+      {% block header %}
+      <h1>{{ title }}</h1>
+      {% endblock %} {% block content %}
+      {{ contents | safe }}
+      {% endblock %}
+    </main>
+
+    {% include 'partials/footer.njk' %}
+  </body>
+</html>
