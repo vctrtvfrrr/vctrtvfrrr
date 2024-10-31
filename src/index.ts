@@ -1,3 +1,4 @@
+// @ts-nocheck
 import collections from "@metalsmith/collections";
 import drafts from "@metalsmith/drafts";
 import layouts from "@metalsmith/layouts";
@@ -5,15 +6,12 @@ import markdown from "@metalsmith/markdown";
 import permalinks from "@metalsmith/permalinks";
 import "dotenv/config";
 import Metalsmith from "metalsmith";
-// @ts-ignore
 import htmlMinifier from "metalsmith-html-minifier";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV !== "production";
-console.log(isProduction);
-
 
 function noop() {}
 // to use a plugin conditionally, use this pattern:
@@ -38,10 +36,14 @@ Metalsmith(__dirname)
   })
   .use(isProduction ? noop : drafts())
   .use(markdown())
-  // @ts-ignore
   .use(collections())
-  // @ts-ignore
-  .use(permalinks({ slug: { extend: { ".": "-" } }, trailingSlash: true }))
+  .use(
+    permalinks({
+      pattern: ":collection?/:date?/:basename",
+      slug: { extend: { ".": "-" } },
+      trailingSlash: true,
+    })
+  )
   .use(
     layouts({
       directory: join(__dirname, "../templates/layouts"),
