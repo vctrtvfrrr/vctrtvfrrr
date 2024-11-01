@@ -6,6 +6,16 @@
   <body>
     {% include 'partials/header.njk' %}
 
+    {% if toc.items.length %}
+      <ol class="toc">
+        {% for item in toc.items %}
+          <li data-level="{{ item.level }}">
+            <a href="#{{ item.anchor }}">{{ item.text }}</a>
+          </li>
+        {% endfor %}
+      </ol>
+    {% endif %}
+
     <main>
       {% block header %}
       <h1>{{ title }}</h1>

@@ -4,6 +4,7 @@ import drafts from "@metalsmith/drafts";
 import layouts from "@metalsmith/layouts";
 import markdown from "@metalsmith/markdown";
 import permalinks from "@metalsmith/permalinks";
+import toc from "@metalsmith/table-of-contents";
 import "dotenv/config";
 import Metalsmith from "metalsmith";
 import htmlMinifier from "metalsmith-html-minifier";
@@ -28,6 +29,7 @@ Metalsmith(__dirname)
   .use(markdown())
   .use(collections(config.collections))
   .use(permalinks(config.permalinks))
+  .use(toc())
   .use(layouts(config.layouts))
   .use(isProduction ? htmlMinifier() : noop)
   .build((err) => {
