@@ -9,7 +9,7 @@ import Metalsmith from "metalsmith";
 import htmlMinifier from "metalsmith-html-minifier";
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import config from "./config.js";
+import config from "./config";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === "production";

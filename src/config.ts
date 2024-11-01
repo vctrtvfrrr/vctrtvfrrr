@@ -23,10 +23,6 @@ export default {
     date: "YYYY",
   },
   layouts: {
-    directory: "../src/templates/layouts",
     default: "base.njk",
-    engineOptions: {
-      root: "src/templates",
-    },
   },
 };
