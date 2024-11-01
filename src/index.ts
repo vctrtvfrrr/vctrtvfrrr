@@ -7,58 +7,33 @@ import permalinks from "@metalsmith/permalinks";
 import "dotenv/config";
 import Metalsmith from "metalsmith";
 import htmlMinifier from "metalsmith-html-minifier";
-import { dirname, join } from "node:path";
+import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import config from "./config.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const isProduction = process.env.NODE_ENV !== "production";
+const isProduction = process.env.NODE_ENV === "production";
+const startTime = performance.now();
 
+// To use a plugin conditionally
 function noop() {}
-// to use a plugin conditionally, use this pattern:
-// .use( isProduction ? htmlMinifier() : noop ) )
-
-const t1 = performance.now();
 
 Metalsmith(__dirname)
-  .source("../content")
-  .destination("../public")
   .clean(true)
-  .env({
-    DEBUG: Boolean(process.env.DEBUG),
-    NODE_ENV: String(process.env.NODE_ENV) || "development",
-  })
-  .metadata({
-    siteurl: "https://www.victorotavio.com.br/",
-    sitename: "Victor Ferreira Homepage",
-    description: "",
-    author: "Victor Ferreira",
-    year: { from: "2007", to: new Date().getFullYear() },
-  })
+  .env(config.env)
+  .source(config.source)
+  .destination(config.destination)
+  .metadata(config.metadata)
   .use(isProduction ? noop : drafts())
   .use(markdown())
-  .use(collections())
-  .use(
-    permalinks({
-      pattern: ":collection?/:date?/:basename",
-      slug: { extend: { ".": "-" } },
-      trailingSlash: true,
-      date: "YYYY",
-    })
-  )
-  .use(
-    layouts({
-      directory: join(__dirname, "../templates/layouts"),
-      default: "base.njk",
-      engineOptions: {
-        root: join(__dirname, "../templates"),
-      },
-    })
-  )
+  .use(collections(config.collections))
+  .use(permalinks(config.permalinks))
+  .use(layouts(config.layouts))
   .use(isProduction ? htmlMinifier() : noop)
   .build((err) => {
     if (err) throw err;
 
     console.log(
-      `Build success in ${((performance.now() - t1) / 1000).toFixed(1)}s`
+      `Build success in ${((performance.now() - startTime) / 1000).toFixed(1)}s`
     );
-});
+  });
