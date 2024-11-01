@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    {% include 'partials/meta.njk' %}
+    {% include '../partials/meta.njk' %}
   </head>
   <body>
-    {% include 'partials/header.njk' %}
+    {% include '../partials/header.njk' %}
 
     <main>
       {% block header %}
@@ -14,6 +14,20 @@
       {% endblock %}
     </main>
 
-    {% include 'partials/footer.njk' %}
+    <p>
+      {% if previous %}
+        Post anterior:
+        <a href="/{{ previous.permalink }}">{{ previous.title }}</a>
+      {% endif %}
+    </p>
+
+    <p>
+      {% if next %}
+        Próximo post:
+        <a href="/{{ next.permalink }}">{{ next.title }}</a>
+      {% endif %}
+    </p>
+
+    {% include '../partials/footer.njk' %}
   </body>
 </html>

@@ -42,6 +42,7 @@ Metalsmith(__dirname)
       pattern: ":collection?/:date?/:basename",
       slug: { extend: { ".": "-" } },
       trailingSlash: true,
+      date: "YYYY",
     })
   )
   .use(
