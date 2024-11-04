@@ -16,27 +16,26 @@
       </ol>
     {% endif %}
 
-    <main>
-      {% block header %}
+    {% block header %}
       <h1>{{ title }}</h1>
-      {% endblock %} {% block content %}
-      {{ contents | safe }}
-      {% endblock %}
-    </main>
+    {% endblock %}
+    {% block content %}
+      <main>{{ contents | safe }}</main>
+    {% endblock %}
 
-    <p>
-      {% if previous %}
+    {% if previous %}
+      <p>
         Post anterior:
         <a href="/{{ previous.permalink }}">{{ previous.title }}</a>
-      {% endif %}
-    </p>
+      </p>
+    {% endif %}
 
-    <p>
-      {% if next %}
+    {% if next %}
+      <p>
         Próximo post:
         <a href="/{{ next.permalink }}">{{ next.title }}</a>
-      {% endif %}
-    </p>
+      </p>
+    {% endif %}
 
     {% include 'partials/footer.njk' %}
   </body>
