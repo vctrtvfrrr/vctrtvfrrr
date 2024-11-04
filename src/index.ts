@@ -13,7 +13,7 @@ import { fileURLToPath } from "node:url";
 import config from "./config";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const isProduction = process.env.NODE_ENV === "production";
+const isProduction = process.env["NODE_ENV"] === "production";
 const startTime = performance.now();
 
 // To use a plugin conditionally

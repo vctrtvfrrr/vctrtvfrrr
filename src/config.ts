@@ -1,12 +1,12 @@
 export default {
   env: {
-    DEBUG: Boolean(process.env.DEBUG),
-    NODE_ENV: String(process.env.NODE_ENV) || "development",
+    DEBUG: Boolean(process.env["DEBUG"]),
+    NODE_ENV: String(process.env["NODE_ENV"]) || "development",
   },
   source: "../content",
   destination: "../public",
   metadata: {
-    siteurl: process.env.APP_URL || "http://localhost:3000",
+    siteurl: process.env["APP_URL"] || "http://localhost:3000",
     sitename: "Victor Ferreira Homepage",
     description: "",
     author: "Victor Ferreira",

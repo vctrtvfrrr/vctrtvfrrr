@@ -4,8 +4,8 @@ import { fileURLToPath } from "node:url";
 import express from "express";
 
 const app = express();
-const host = process.env.HOST || "localhost";
-const port = process.env.PORT || 3000;
+const host = process.env["HOST"] || "localhost";
+const port = process.env["PORT"] || 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
