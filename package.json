@@ -5,7 +5,7 @@
   "author": "Victor Otávio Ferreira <victor@ferreira.id>",
   "license": "CC BY-NC-SA 4.0",
   "type": "module",
-  "main": "dist/index.js",
+  "module": "src/index.ts",
   "scripts": {
     "build": "bun src/index.ts",
     "start": "bun src/server.ts",
@@ -24,11 +24,13 @@
     "@metalsmith/permalinks": "^3.0.1",
     "@metalsmith/table-of-contents": "^1.0.0",
     "@types/express": "^5.0.0",
-    "@types/node": "^22.8.4",
+    "@types/bun": "^1.1.13",
     "jstransformer-nunjucks": "^1.2.0",
     "metalsmith": "^2.6.3",
     "metalsmith-html-minifier": "^4.0.1",
-    "nodemon": "^3.1.7",
+    "nodemon": "^3.1.7"
+  },
+  "peerDependencies": {
     "typescript": "^5.6.3"
   }
 }
