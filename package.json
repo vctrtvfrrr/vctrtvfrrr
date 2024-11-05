@@ -9,7 +9,7 @@
   "scripts": {
     "build": "bun src/index.ts",
     "start": "bun src/server.ts",
-    "dev": "nodemon --watch src --watch content --ext ts,njk,md --exec \"bun run build && bun run start\"",
+    "dev": "nodemon --watch src --watch content --ext ts,njk,md,css --exec \"bun run build && bun run start\"",
     "format": "bunx prettier --ignore-unknown --write --ignore-path .prettierignore .",
     "lint": "bunx eslint .",
     "lint:fix": "bunx eslint --fix .",
@@ -35,6 +35,7 @@
     "jstransformer-nunjucks": "^1.2.0",
     "metalsmith": "^2.6.3",
     "metalsmith-html-minifier": "^4.0.1",
+    "metalsmith-static-files": "^0.4.0",
     "nodemon": "^3.1.7",
     "prettier": "^3.3.3",
     "prettier-plugin-jinja-template": "^2.0.0",

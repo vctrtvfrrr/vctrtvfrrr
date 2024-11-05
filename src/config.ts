@@ -1,6 +1,6 @@
 export default {
   env: {
-    DEBUG: Boolean(process.env['DEBUG']),
+    DEBUG: String(process.env['DEBUG']),
     NODE_ENV: String(process.env['NODE_ENV']) || 'development',
   },
   source: '../content',
@@ -24,5 +24,9 @@ export default {
   },
   layouts: {
     default: 'base.njk',
+  },
+  assets: {
+    source: 'assets',
+    destination: 'assets',
   },
 }
