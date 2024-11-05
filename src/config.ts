@@ -1,28 +1,28 @@
 export default {
   env: {
-    DEBUG: Boolean(process.env["DEBUG"]),
-    NODE_ENV: String(process.env["NODE_ENV"]) || "development",
+    DEBUG: Boolean(process.env['DEBUG']),
+    NODE_ENV: String(process.env['NODE_ENV']) || 'development',
   },
-  source: "../content",
-  destination: "../public",
+  source: '../content',
+  destination: '../public',
   metadata: {
-    siteurl: process.env["APP_URL"] || "http://localhost:3000",
-    sitename: "Victor Ferreira Homepage",
-    description: "",
-    author: "Victor Ferreira",
-    year: { from: "2007", to: new Date().getFullYear() },
+    siteurl: process.env['APP_URL'] || 'http://localhost:3000',
+    sitename: 'Victor Ferreira Homepage',
+    description: '',
+    author: 'Victor Ferreira',
+    year: { from: '2007', to: new Date().getFullYear() },
   },
   collections: {},
   permalinks: {
     slug: {
       extend: {
-        ".": "-",
+        '.': '-',
       },
     },
     trailingSlash: true,
-    date: "YYYY",
+    date: 'YYYY',
   },
   layouts: {
-    default: "base.njk",
+    default: 'base.njk',
   },
-};
+}

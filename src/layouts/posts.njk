@@ -6,16 +6,16 @@
       <h2>{{ collection.metadata.title }}</h2>
       <p>{{ collection.metadata.description }}</p>
       {% if collections[key].length %}
-      <ul>
-        {% for item in collection %}
-          <li>
-            <h3>
-              <a href="/{{ item.permalink }}">{{ item.title }}</a>
-            </h3>
-            <p>{{ item.excerpt }}</p>
-          </li>
-        {% endfor %}
-      </ul>
+        <ul>
+          {% for item in collection %}
+            <li>
+              <h3>
+                <a href="/{{ item.permalink }}">{{ item.title }}</a>
+              </h3>
+              <p>{{ item.excerpt }}</p>
+            </li>
+          {% endfor %}
+        </ul>
       {% else %}
         Nenhum post encontrado
       {% endif %}
