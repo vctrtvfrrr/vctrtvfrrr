@@ -36,7 +36,7 @@ export function images(options: typeof defaultOptions = defaultOptions) {
     metalsmith: Metalsmith,
     done: (msg?: string) => void
   ) {
-    const debug = metalsmith.debug('helpers/images')
+    const debug = metalsmith.debug('plugins/images')
     const imagesFiles = metalsmith.match(`**/${options.source}/*`, Object.keys(files))
     const changedFiles: AssociativeArray = {}
 

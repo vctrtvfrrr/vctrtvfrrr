@@ -8,11 +8,10 @@ import toc from '@metalsmith/table-of-contents'
 import 'dotenv/config'
 import Metalsmith from 'metalsmith'
 import htmlMinifier from 'metalsmith-html-minifier'
-import assets from 'metalsmith-static-files'
 import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import config from './config'
-import { images } from './plugins'
+import { assets, images } from './plugins'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const isProduction = process.env['NODE_ENV'] === 'production'
@@ -34,7 +33,7 @@ Metalsmith(__dirname)
   .use(images())
   .use(toc())
   .use(layouts(config.layouts))
-  .use(assets(config.assets))
+  .use(assets())
   .use(isProduction ? htmlMinifier() : noop)
   .build((err) => {
     if (err) throw err

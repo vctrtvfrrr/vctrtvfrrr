@@ -25,8 +25,4 @@ export default {
   layouts: {
     default: 'base.njk',
   },
-  assets: {
-    source: 'assets',
-    destination: 'assets',
-  },
 }
