@@ -7,7 +7,7 @@ export default {
   destination: '../public',
   metadata: {
     siteurl: process.env['APP_URL'] || 'http://localhost:3000',
-    sitename: 'Victor Ferreira Homepage',
+    sitename: "Victor Ferreira's Homepage",
     description:
       'Homepage de Victor Ferreira, desenvolvedor e teólogo. Aqui você encontrará artigos, notas e projetos sobre tecnologia e teologia.',
     abstract: 'Homepage de Victor Ferreira, desenvolvedor e teólogo',
@@ -79,6 +79,6 @@ export default {
     date: 'YYYY',
   },
   layouts: {
-    default: 'base.njk',
+    default: 'content.njk',
   },
 }

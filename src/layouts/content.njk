@@ -1,0 +1,30 @@
+{% extends "base.njk" %}
+
+{% block content %}
+  {% if toc.items.length %}
+    <OL class="toc">
+      {% for item in toc.items %}
+        <LI data-level="{{ item.level }}">
+          <A HREF="#{{ item.anchor }}">{{ item.text }}</A>
+        </LI>
+      {% endfor %}
+    </OL>
+  {% endif %}
+
+  <H1>{{ title }}</H1>
+  {{ contents | safe }}
+
+  {% if previous %}
+    <p>
+      Post anterior:
+      <a href="/{{ previous.permalink }}">{{ previous.title }}</a>
+    </p>
+  {% endif %}
+
+  {% if next %}
+    <p>
+      Próximo post:
+      <a href="/{{ next.permalink }}">{{ next.title }}</a>
+    </p>
+  {% endif %}
+{% endblock %}

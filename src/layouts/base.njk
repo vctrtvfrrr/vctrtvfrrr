@@ -9,40 +9,17 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    {% include 'partials/header.njk' %}
+    <DIV CLASS="WRAPPER">
+      {% include 'partials/header.njk' %}
 
-    {% if toc.items.length %}
-      <OL class="toc">
-        {% for item in toc.items %}
-          <LI data-level="{{ item.level }}">
-            <A HREF="#{{ item.anchor }}">{{ item.text }}</A>
-          </LI>
-        {% endfor %}
-      </OL>
-    {% endif %}
+      <main CLASS="CONTENT">
+        {% block content %}
+          <H1>{{ title }}</H1>
+          {{ contents | safe }}
+        {% endblock %}
+      </main>
 
-    {% block header %}
-      <H1>{{ title }}</H1>
-    {% endblock %}
-
-    {% block content %}
-      <main>{{ contents | safe }}</main>
-    {% endblock %}
-
-    {% if previous %}
-      <p>
-        Post anterior:
-        <a href="/{{ previous.permalink }}">{{ previous.title }}</a>
-      </p>
-    {% endif %}
-
-    {% if next %}
-      <p>
-        Próximo post:
-        <a href="/{{ next.permalink }}">{{ next.title }}</a>
-      </p>
-    {% endif %}
-
-    {% include 'partials/footer.njk' %}
+      {% include 'partials/footer.njk' %}
+    </DIV>
   </BODY>
 </HTML>
