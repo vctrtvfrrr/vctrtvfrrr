@@ -1,19 +1,28 @@
-{% if title %}
-  {% set pageTitle = title + ' | ' + sitename %}
-{% else %}
-  {% set pageTitle = sitename %}
-{% endif %}
+{%- if title -%}
+  {%- set pageTitle = title + ' | ' + sitename -%}
+{%- else -%}
+  {%- set pageTitle = sitename -%}
+{%- endif -%}
 
-{% if description %}
-  {% set pageDescription = description %}
-{% else %}
-  {% set pageDescription = author %}
-{% endif %}
+{%- if description -%}
+  {%- set pageDescription = description -%}
+{%- else -%}
+  {%- set pageDescription = author -%}
+{%- endif -%}
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>{{ pageTitle }}</title>
-<meta name="description" content="{{ pageDescription }}" />
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV="Content-Language" CONTENT="pt-br">
+<META NAME="language" CONTENT="pt-BR">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
-<link rel="stylesheet" href="/assets/styles.css" />
+<LINK REL="stylesheet" TYPE="text/css" HREF="/assets/styles.css">
+<LINK REL="shortcut icon" HREF="/assets/favicon.ico">
+
+<TITLE>{{ pageTitle }}</TITLE>
+<META NAME="description" CONTENT="{{ pageDescription }}">
+<META NAME="keywords" CONTENT="{{ keywords }}">
+<META NAME="abstract" CONTENT="{{ abstract }}">
+<META NAME="author" CONTENT="{{ author }}">
+<META NAME="robots" CONTENT="index, follow">
+<META NAME="revisit-after" CONTENT="15 days">

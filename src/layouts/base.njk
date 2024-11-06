@@ -1,23 +1,23 @@
-<!doctype html>
-<html lang="pt-BR">
-  <head>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "//www.w3.org/TR/html4/loose.dtd">
+<HTML>
+  <HEAD>
     {% include 'partials/meta.njk' %}
-  </head>
-  <body>
+  </HEAD>
+  <BODY>
     {% include 'partials/header.njk' %}
 
     {% if toc.items.length %}
-      <ol class="toc">
+      <OL class="toc">
         {% for item in toc.items %}
-          <li data-level="{{ item.level }}">
-            <a href="#{{ item.anchor }}">{{ item.text }}</a>
-          </li>
+          <LI data-level="{{ item.level }}">
+            <A HREF="#{{ item.anchor }}">{{ item.text }}</A>
+          </LI>
         {% endfor %}
-      </ol>
+      </OL>
     {% endif %}
 
     {% block header %}
-      <h1>{{ title }}</h1>
+      <H1>{{ title }}</H1>
     {% endblock %}
 
     {% block content %}
@@ -39,5 +39,6 @@
     {% endif %}
 
     {% include 'partials/footer.njk' %}
-  </body>
-</html>
+
+  </BODY>
+</HTML>
