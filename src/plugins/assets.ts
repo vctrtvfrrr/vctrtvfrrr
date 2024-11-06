@@ -1,5 +1,6 @@
 import type Metalsmith from 'metalsmith'
 import fs from 'node:fs'
+import type { File } from '../types'
 
 const defaultOptions = {
   source: 'assets',
@@ -16,6 +17,8 @@ export function assets(options: typeof defaultOptions = defaultOptions) {
   ) {
     const debug = metalsmith.debug('plugins/assets')
 
+    setImmediate(done)
+
     const source = metalsmith.path(options.source)
     debug.info('source directory: %O', source)
     const destination = metalsmith.path(metalsmith.destination(), options.destination)
@@ -23,7 +26,6 @@ export function assets(options: typeof defaultOptions = defaultOptions) {
 
     try {
       fs.cpSync(source, destination, { recursive: true })
-      done()
     } catch (err) {
       debug.error(err)
       done('An error occured while copying the directory')

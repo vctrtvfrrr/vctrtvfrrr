@@ -11,7 +11,7 @@ import htmlMinifier from 'metalsmith-html-minifier'
 import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import config from './config'
-import { assets, images } from './plugins'
+import { assets, highlight, images } from './plugins'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const isProduction = process.env['NODE_ENV'] === 'production'
@@ -31,6 +31,7 @@ Metalsmith(__dirname)
   .use(collections(config.collections))
   .use(permalinks(config.permalinks))
   .use(images())
+  .use(highlight())
   .use(toc())
   .use(layouts(config.layouts))
   .use(assets())

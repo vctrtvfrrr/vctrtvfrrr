@@ -3,16 +3,7 @@ import type Metalsmith from 'metalsmith'
 import fs from 'node:fs'
 import path from 'node:path'
 import slugify from 'slugify'
-
-type File = {
-  contents: Buffer
-  path: string
-  collection: string[]
-}
-
-type AssociativeArray = {
-  [key: string]: string
-}
+import type { AssociativeArray, File } from '../types'
 
 const defaultOptions = {
   source: 'assets',
@@ -39,6 +30,8 @@ export function images(options: typeof defaultOptions = defaultOptions) {
     const debug = metalsmith.debug('plugins/images')
     const imagesFiles = metalsmith.match(`**/${options.source}/*`, Object.keys(files))
     const changedFiles: AssociativeArray = {}
+
+    setImmediate(done)
 
     imagesFiles.forEach((filePath: string) => {
       const data: File = files[filePath]
@@ -77,7 +70,8 @@ export function images(options: typeof defaultOptions = defaultOptions) {
     })
 
     metalsmith.match('**/*.html', Object.keys(files)).forEach((filePath) => {
-      const contents = files[filePath].contents.toString()
+      const file = files[filePath]
+      const contents = file.contents.toString()
       const $ = cheerio.load(contents)
 
       const imgs = $('img')
@@ -89,10 +83,8 @@ export function images(options: typeof defaultOptions = defaultOptions) {
         $(img).attr('src', `/${options.destination}/${changedFiles[src]}`)
       })
 
-      files[filePath].contents = Buffer.from($.html())
+      file.contents = Buffer.from($.html())
     })
-
-    done()
   }
 }
 
