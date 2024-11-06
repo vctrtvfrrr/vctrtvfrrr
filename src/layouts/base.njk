@@ -4,6 +4,11 @@
     {% include 'partials/meta.njk' %}
   </HEAD>
   <BODY>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ googletagmanager }}"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     {% include 'partials/header.njk' %}
 
     {% if toc.items.length %}
@@ -39,6 +44,5 @@
     {% endif %}
 
     {% include 'partials/footer.njk' %}
-
   </BODY>
 </HTML>

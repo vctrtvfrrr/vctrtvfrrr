@@ -15,6 +15,7 @@ export default {
       'Victor Ferreira, homepage, blog, artigos, notas, projetos, currículo, tecnologia, teologia',
     author: 'Victor Ferreira',
     year: { from: '2007', to: new Date().getFullYear() },
+    googletagmanager: String(process.env['GOOGLE_TAG_MANAGER']),
   },
   collections: {
     techArticles: {
