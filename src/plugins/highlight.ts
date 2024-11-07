@@ -4,6 +4,14 @@ import hljs from 'highlight.js'
 import type Metalsmith from 'metalsmith'
 import type { File } from '../types'
 
+function identifyLanguage(classAttr: string) {
+  const classes = classAttr.split(' ')
+  const langClass = classes.find((c) => c.startsWith('language-'))
+  const lang = langClass ? hljs.getLanguage(langClass.split('-')[1]) : null
+
+  return lang ? lang.name : null
+}
+
 export function highlight() {
   return function highlight(
     files: { [key: string]: File },
@@ -22,7 +30,7 @@ export function highlight() {
 
       if (codeBlocks.length === 0) return
 
-      debug.info(`highlighting ${filePath}`)
+      debug.info(`Highlighting file: ${filePath}`)
 
       codeBlocks.each((_, code) => {
         const $code = $(code)
@@ -30,13 +38,8 @@ export function highlight() {
 
         if (htmlCode === null) return
 
-        const classes = $code.attr('class')
-        let language = null
-
-        if (classes) {
-          const langClass = classes.split(' ').find((c) => c.startsWith('language-'))
-          language = langClass ? langClass.split('-')[1] : null
-        }
+        const classAttr = $code.attr('class')
+        const language = classAttr ? identifyLanguage(classAttr) : null
 
         let highlightedCode = null
 
