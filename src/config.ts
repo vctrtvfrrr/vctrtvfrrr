@@ -22,7 +22,7 @@ export default {
       metadata: {
         title: 'Tecnologia - Artigos',
         description: 'Artigos sobre tecnologia',
-        slug: 'tech/articles',
+        slug: 'tecnologia/artigos',
       },
       pattern: 'Tecnologia/Artigos/**/*.html',
       sortBy: 'pubdate',
@@ -33,7 +33,7 @@ export default {
       metadata: {
         title: 'Tecnologia - Notas',
         description: 'Notas sobre tecnologia',
-        slug: 'tech/notes',
+        slug: 'tecnologia/notas',
       },
       pattern: 'Tecnologia/Notas/**/*.html',
       sortBy: 'date',
@@ -44,7 +44,7 @@ export default {
       metadata: {
         title: 'Teologia',
         description: 'Artigos sobre teologia',
-        slug: 'theology',
+        slug: 'teologia',
       },
       pattern: 'Teologia/**/*.html',
       sortBy: 'pubdate',
@@ -53,7 +53,6 @@ export default {
     },
   },
   permalinks: {
-    pattern: ':title',
     trailingSlash: true,
     date: 'YYYY',
     slug: {
@@ -64,17 +63,17 @@ export default {
     linksets: [
       {
         match: { collection: 'techArticles' },
-        pattern: 'tech/articles/:date/:title',
+        pattern: 'tecnologia/artigos/:date/:title',
         date: 'YYYY',
       },
       {
         match: { collection: 'techNotes' },
-        pattern: 'tech/notes/:date/:title',
+        pattern: 'tecnologia/notas/:date/:title',
         date: 'YYYY',
       },
       {
         match: { collection: 'theology' },
-        pattern: 'theology/:date/:title',
+        pattern: 'teologia/:date/:title',
         date: 'YYYY',
       },
     ],

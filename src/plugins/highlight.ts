@@ -9,7 +9,7 @@ function identifyLanguage(classAttr: string) {
   const langClass = classes.find((c) => c.startsWith('language-'))
   const lang = langClass ? hljs.getLanguage(langClass.split('-')[1]) : null
 
-  return lang ? lang.name : null
+  return lang ? lang.aliases?.at(0) : null
 }
 
 export function highlight() {
