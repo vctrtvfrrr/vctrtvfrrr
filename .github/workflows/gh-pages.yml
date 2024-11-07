@@ -31,20 +31,35 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Install Dependencies
         run: bun install --frozen-lockfile
+
+      - name: Setup environment
+        run: |
+          echo "NODE_ENV=production" >> .env
+          echo "APP_URL=$APP_URL" >> .env
+          echo "GOOGLE_TAG_MANAGER=$GOOGLE_TAG_MANAGER" >> .env
+        env:
+          APP_URL: ${{ vars.APP_URL }}
+          GOOGLE_TAG_MANAGER: ${{ vars.GOOGLE_TAG_MANAGER }}
+
       - name: Build Pages
         run: bun run build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: 'public'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
