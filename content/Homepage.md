@@ -1,5 +1,6 @@
 ---
 layout: home.njk
+permalink: index
 ---
 Olá. Eu sou Victor Ferreira. Se você quiser saber um pouco sobre mim, [aqui](bio.md) eu publiquei uma bio curta (e um pouco desatualizada), ou você pode dar uma olhada no [meu currículo](resume.md) ou em qualquer uma das outras páginas deste site.
 
