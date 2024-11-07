@@ -53,6 +53,14 @@ export default {
     },
   },
   permalinks: {
+    pattern: ':title',
+    trailingSlash: true,
+    date: 'YYYY',
+    slug: {
+      extend: {
+        '.': '-',
+      },
+    },
     linksets: [
       {
         match: { collection: 'techArticles' },
@@ -70,13 +78,6 @@ export default {
         date: 'YYYY',
       },
     ],
-    slug: {
-      extend: {
-        '.': '-',
-      },
-    },
-    trailingSlash: true,
-    date: 'YYYY',
   },
   layouts: {
     default: 'content.njk',
