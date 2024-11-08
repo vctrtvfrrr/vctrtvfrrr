@@ -1,6 +1,6 @@
 ---
 title: Mural de Visitas
-layout: mural.njk
+layout: guestbook.njk
 ---
 Olá, e bem-vindo ao meu mural de visitas. Deixe aqui o seu "olá".
 
