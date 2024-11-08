@@ -78,5 +78,14 @@ export default {
   layouts: {
     default: 'content.njk',
     directory: './src/layouts',
+    engineOptions: {
+      filters: {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        debug(input: any) {
+          console.log(input)
+          return input
+        },
+      },
+    },
   },
 }

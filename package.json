@@ -4,20 +4,23 @@
   "description": "victor ferreira homepage",
   "author": "Victor Otávio Ferreira <victor@ferreira.id>",
   "license": "CC BY-NC-SA 4.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vctrtvfrrr/vctrtvfrrr.git"
+  },
   "type": "module",
   "module": "src/build.ts",
   "scripts": {
-    "build": "bun src/build.ts",
-    "start": "bun src/server.ts",
-    "dev": "nodemon --watch src --watch content --ext ts,njk,md,css --exec \"bun run build && bun run start\"",
+    "start": "browser-sync start --server public --no-open",
+    "build": "cross-env NODE_ENV=production bun src/build.ts",
+    "dev": "cross-env NODE_ENV=development bun src/build.ts",
     "format": "bunx prettier --ignore-unknown --write --ignore-path .prettierignore .",
     "lint": "bunx eslint .",
     "lint:fix": "bunx eslint --fix .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "express": "^4.21.1"
+    "dotenv": "^16.4.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.14.0",
@@ -28,7 +31,8 @@
     "@metalsmith/permalinks": "^3.1.0",
     "@metalsmith/table-of-contents": "^1.0.0",
     "@types/bun": "^1.1.13",
-    "@types/express": "^5.0.0",
+    "browser-sync": "^3.0.3",
+    "cross-env": "^7.0.3",
     "cheerio": "^1.0.0",
     "entities": "^5.0.0",
     "eslint": "^9.14.0",
@@ -36,7 +40,6 @@
     "highlight.js": "^11.10.0",
     "jstransformer-nunjucks": "^1.2.0",
     "metalsmith": "^2.6.3",
-    "nodemon": "^3.1.7",
     "prettier": "^3.3.3",
     "prettier-plugin-jinja-template": "^2.0.0",
     "prettier-plugin-organize-imports": "^4.1.0",
