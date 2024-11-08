@@ -7,7 +7,6 @@ import permalinks from '@metalsmith/permalinks'
 import toc from '@metalsmith/table-of-contents'
 import 'dotenv/config'
 import Metalsmith from 'metalsmith'
-import htmlMinifier from 'metalsmith-html-minifier'
 import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import config from './config'
@@ -37,7 +36,6 @@ Metalsmith(__dirname)
   .use(toc())
   .use(layouts(config.layouts))
   .use(assets())
-  .use(isProduction ? htmlMinifier() : noop)
   .build((err) => {
     if (err) throw err
     console.log(`Build success in ${((performance.now() - startTime) / 1000).toFixed(1)}s`)
