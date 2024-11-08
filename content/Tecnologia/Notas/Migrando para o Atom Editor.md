@@ -1,9 +1,8 @@
 ---
 title: Migrando para o Atom Editor
-date: 
+date: 2014-12-10
 draft: true
 ---
-
 Já faz alguns anos que eu tenho usado o NetBeans como minha IDE principal para desenvolvimento web (PHP, HTML, CSS, JS...).
 
 Nessa semana fiquei sabendo do Atom.
@@ -12,8 +11,9 @@ Não sou de ficar mudando demais minhas ferramentas, principalmente quando me si
 
 A princípio, parecia apenas mais um editor de código simples, como o velho de guerra Notepad++, sem ferramentas mais avançadas como se espera de uma IDE.
 
-[Atom editor for PHP developers | PHP.earth](https://docs.php.earth/interop/atom/)
-[Atom Editor: Your Next Go-To Text Editor - Linux.com](https://www.linux.com/topic/desktop/atom-editor-your-next-go-text-editor/)
+[Alternativa grátis ao Sublime, editor Atom ganha suporte a múltiplas pastas - Blog da ValueHost](https://www.valuehost.com.br/blog/alternativa-gratis-ao-sublime-editor-atom-ganha-suporte-a-multiplas-pastas/)
+[Atom, um editor de textos focado em programadores e criado pelo GitHub – Código Fonte](https://www.codigofonte.com.br/ferramentas/atom-um-editor-de-textos-focado-em-programadores-e-criado-pelo-github)
+[Primeiras impressões do Atom - Editor do GitHub - PHPit](https://www.phpit.com.br/artigos/primeiras-impressoes-atom-editor-github.phpit)
 
 | Color Name   |           RGB |      Hex |
 | :----------- | ------------: | -------: |
