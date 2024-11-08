@@ -11,7 +11,9 @@
     </OL>
   {% endif %}
 
-  <H1>{{ title }}</H1>
+  {%- if title -%}
+    <H1>{{ title }}</H1>
+  {%- endif -%}
   {{ contents | safe }}
 
   {% if previous %}
