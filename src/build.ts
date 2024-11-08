@@ -31,7 +31,7 @@ function msBuild() {
     .destination(config.destination)
     .metadata(config.metadata)
     .use(originalData())
-    .use(isProduction ? noop : drafts())
+    .use(isProduction ? drafts() : noop)
     .use(markdown())
     .use(collections(config.collections))
     .use(permalinks(config.permalinks))
