@@ -16,17 +16,19 @@
   {%- endif -%}
   {{ contents | safe }}
 
+  <HR>
+
   {% if previous %}
-    <p>
+    <P>
       Post anterior:
-      <a href="/{{ previous.permalink }}">{{ previous.title }}</a>
-    </p>
+      <A HREF="/{{ previous.permalink }}">{{ previous.title }}</A>
+    </P>
   {% endif %}
 
   {% if next %}
-    <p>
+    <P>
       Próximo post:
-      <a href="/{{ next.permalink }}">{{ next.title }}</a>
-    </p>
+      <a HREF="/{{ next.permalink }}">{{ next.title }}</A>
+    </P>
   {% endif %}
 {% endblock %}

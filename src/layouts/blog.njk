@@ -3,19 +3,19 @@
 {% block content %}
   {% for key, collection in collections %}
     <section>
-      <h2>{{ collection.metadata.title }}</h2>
-      <p>{{ collection.metadata.description }}</p>
+      <H2>{{ collection.metadata.title }}</H2>
+      <P>{{ collection.metadata.description }}</P>
       {% if collections[key].length %}
-        <ul>
+        <UL>
           {% for item in collection %}
-            <li>
-              <h3>
-                <a href="/{{ item.permalink }}">{{ item.title }}</a>
-              </h3>
-              <p>{{ item.excerpt }}</p>
-            </li>
+            <LI>
+              <H3>
+                <A HREF="/{{ item.permalink }}">{{ item.title }}</A>
+              </H3>
+              <P>{{ item.excerpt }}</P>
+            </LI>
           {% endfor %}
-        </ul>
+        </UL>
       {% else %}
         Nenhum post encontrado
       {% endif %}
