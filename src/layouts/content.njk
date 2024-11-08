@@ -18,6 +18,10 @@
 
   <HR>
 
+  <DIV CLASS="giscus"></DIV>
+
+  <HR>
+
   {% if previous %}
     <P>
       Post anterior:
@@ -32,3 +36,24 @@
     </P>
   {% endif %}
 {% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+
+  <script src="https://giscus.app/client.js"
+          data-repo="vctrtvfrrr/vctrtvfrrr"
+          data-repo-id="R_kgDOI-ZFww"
+          data-category="Comentários"
+          data-category-id="DIC_kwDOI-ZFw84CkGgD"
+          data-mapping="title"
+          data-strict="0"
+          data-reactions-enabled="0"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="dark_dimmed"
+          data-lang="pt"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+  </script>
+{% endblock head %}

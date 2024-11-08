@@ -1,7 +1,11 @@
+{%- set pageTitle = sitename -%}
+
+{%- if collections[collection].metadata.title -%}
+  {%- set pageTitle = collections[collection].metadata.title + ' | ' + pageTitle -%}
+{%- endif -%}
+
 {%- if title -%}
-  {%- set pageTitle = title + ' | ' + sitename -%}
-{%- else -%}
-  {%- set pageTitle = sitename -%}
+  {%- set pageTitle = title + ' | ' + pageTitle -%}
 {%- endif -%}
 
 {%- if description -%}
@@ -25,7 +29,6 @@
 <META NAME="language" CONTENT="pt-BR">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
 <LINK REL="stylesheet" TYPE="text/css" HREF="/assets/styles.css">
 <LINK REL="shortcut icon" HREF="/favicon.ico">
 

@@ -1,29 +1,29 @@
 BODY {
-  background: #1E1E2A;
+  background: #282C34;
   margin: 24px;
-  color: #FFEDD5;
+  color: #ABB2BF;
   font-family: Verdana, Helvetica, Arial, sans-serif;
 }
 
 H1, H2, H3, H4, H5, H6 {
-  color: #FCA307;
+  color: #C678DD;
   text-decoration: none;
 }
 
 A:link, A:visited {
-  color: #B95404;
+  color: #61AFEF;
   text-decoration: underline;
   font-weight: bold;
 }
 
 A:hover, A:active, A:focus {
-  color: #DF7900;
+  color: #98C379;
   text-decoration: none;
   font-weight: bold;
 }
 
 hr {
-  border: 1px solid #FCA307;
+  border: 1px solid #5C6370;
 }
 
 .WRAPPER {
@@ -35,7 +35,7 @@ hr {
 }
 
 .SITENAME {
-  color: #FCA307;
+  color: #E06C75;
   font-size: 1.5em;
   font-weight: bold;
   margin: 0 0 0.25em;

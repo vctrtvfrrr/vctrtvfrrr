@@ -2,6 +2,7 @@
 <HTML>
   <HEAD>
     {% include 'partials/meta.njk' %}
+    {%- block head %}{% endblock head -%}
   </HEAD>
   <BODY>
     {%- if isProduction -%}
