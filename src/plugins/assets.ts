@@ -3,8 +3,8 @@ import fs from 'node:fs'
 import type { File } from '../types'
 
 const defaultOptions = {
-  source: 'assets',
-  destination: 'assets',
+  source: 'static',
+  destination: '',
 }
 
 export function assets(options: typeof defaultOptions = defaultOptions) {

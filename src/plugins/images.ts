@@ -7,7 +7,7 @@ import type { AssociativeArray, File } from '../types'
 
 const defaultOptions = {
   source: 'assets',
-  destination: '_images',
+  destination: 'assets/images',
 }
 
 function formatDirectories(subDirectories: string, suffix: string) {

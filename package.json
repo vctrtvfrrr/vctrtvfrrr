@@ -5,9 +5,9 @@
   "author": "Victor Otávio Ferreira <victor@ferreira.id>",
   "license": "CC BY-NC-SA 4.0",
   "type": "module",
-  "module": "src/index.ts",
+  "module": "src/build.ts",
   "scripts": {
-    "build": "bun src/index.ts",
+    "build": "bun src/build.ts",
     "start": "bun src/server.ts",
     "dev": "nodemon --watch src --watch content --ext ts,njk,md,css --exec \"bun run build && bun run start\"",
     "format": "bunx prettier --ignore-unknown --write --ignore-path .prettierignore .",
