@@ -2,6 +2,7 @@ export default {
   source: './content',
   destination: './public',
   metadata: {
+    isProduction: process.env['NODE_ENV'] === 'production',
     siteurl: process.env['APP_URL'] || 'http://localhost:3000',
     sitename: "Victor Ferreira's Homepage",
     description:
