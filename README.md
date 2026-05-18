@@ -64,6 +64,6 @@
 ---
 
 <div align="center">
-![Language Stats](stats/leaderboard_by_lines.png)
+<img src="https://raw.githubusercontent.com/vctrtvfrrr/vctrtvfrrr/refs/heads/master/stats/leaderboard_by_lines.png" alt="Language Stats" />
 <img src="https://streak-stats.demolab.com/?user=vctrtvfrrr" alt="GitHub Streak" width="478" />
 </div>
