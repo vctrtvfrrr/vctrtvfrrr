@@ -64,6 +64,6 @@
 ---
 
 <div align="center">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vctrtvfrrr&layout=compact&langs_count=8&hide=html,css" alt="Top Langs" width="347" />
+![Language Stats](stats/leaderboard_by_lines.png)
 <img src="https://streak-stats.demolab.com/?user=vctrtvfrrr" alt="GitHub Streak" width="478" />
 </div>
